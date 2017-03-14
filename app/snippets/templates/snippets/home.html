@@ -1,0 +1,13 @@
+{% extends 'snippets/base.html' %}
+
+{% block page_title %}Snippets Home Page{% endblock %}
+
+
+{% block content %}
+    
+    <ul>
+    {% for snippet in snippets %}
+        <li><a href="/detail/{{snippet.id}}/">{{snippet.title}}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

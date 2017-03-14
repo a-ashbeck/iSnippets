@@ -1,0 +1,10 @@
+{% extends 'snippets/base.html'%}
+
+{% block page_title%}Snippet Detail Page{%endblock%}
+
+{% block content %}
+    <li>Title: {{ snippet.title}}</li>
+    <li>Language: {{ snippet.language }} </li>
+    <li>Snippet: <pre>{{ snippet.code_snippet }}</pre></li>
+    <li>Description: {{ snippet.description }}</li>
+{% endblock %}

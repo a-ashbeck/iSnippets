@@ -1,0 +1,39 @@
+{% extends 'snippets/base.html' %}
+
+{% block page_title %}Add New Snippet{% endblock %}
+
+{% block content %}
+    <form class="form-horizontal" method="POST" action="{% url 'snippets:add' %}">
+        
+          <fieldset>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Title:</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Snippet Title">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Language: </label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="language" name="language" placeholder="Snippet Language">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="textArea" class="col-lg-2 control-label">Snippet:</label>
+              <div class="col-lg-10">
+                <textarea class="form-control" rows="10" name="code_snippet" id="code_snippet" placeholder="Snippet itself!"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+              <div class="col-lg-10">
+                <textarea class="form-control" rows="3" name="description" id="description" placeholder="Snippet Description"></textarea>
+              </div>
+            </div>
+          </fieldset>
+          <button type="submit">Save Snippet</button>
+        {% csrf_token %}
+    </form>
+
+
+{% endblock %}
